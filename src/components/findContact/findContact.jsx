@@ -1,6 +1,7 @@
 
 import React from 'react'
 import { FcContatiner } from './findContact.styled'
+import propTypes from 'prop-types';
 
 const FindContact = ({filter, onChange}) => {
     return (
@@ -13,3 +14,8 @@ const FindContact = ({filter, onChange}) => {
 }
 
 export default FindContact
+
+FindContact.propTypes ={
+  filter: propTypes.string,
+  onChange: propTypes.func,
+}

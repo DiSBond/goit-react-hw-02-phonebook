@@ -1,11 +1,19 @@
 import React from "react";
+import propTypes from 'prop-types';
 
-const ContactListElement = ({id, name, number}) => {
+const ContactListElement = ({id, name, number, onDelete}) => {
 return (
-    <li key={contact.id}>{contact.name}: {contact.number}
-        <button onClick={() => this.props.onDeleteContact(contact.id)}>Удалить</button>
-    </li>
+    <div>{name}: {number}
+        <button onClick={() => onDelete(id)}>Удалить</button>
+    </div>
 )
 }
 
 export default ContactListElement
+
+ContactListElement.propTypes = {
+    id: propTypes.string,
+    name: propTypes.string,
+    number: propTypes.string,
+    onDelete: propTypes.func,
+}

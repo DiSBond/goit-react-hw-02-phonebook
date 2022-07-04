@@ -1,10 +1,8 @@
 
-
 import React, { Component } from 'react'
-
 import { ContactListStl } from './contactList.styled'
-
 import ContactListElement from 'components/contactElement/contactElement'
+import propTypes from 'prop-types';
 
 export default class ContactList extends Component {
   render() {
@@ -12,7 +10,9 @@ export default class ContactList extends Component {
       <div>
       <ContactListStl>
         {this.props.visibleContacts.map(contact => {
-          return (<ContactListElement id={contact.id} name={contact.name} number={contact.number}/>)
+          return (<li key={contact.id}>
+            <ContactListElement id={contact.id} name={contact.name} number={contact.number} onDelete={this.props.onDeleteContact}/>
+          </li>)
         })}
       </ContactListStl>
       </div>
@@ -20,4 +20,6 @@ export default class ContactList extends Component {
   }
 }
 
-
+ContactList.propTypes = {
+  visibleContacts: propTypes.arrayOf(propTypes.object)
+}
