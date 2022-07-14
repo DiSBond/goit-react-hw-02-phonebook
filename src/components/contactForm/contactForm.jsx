@@ -1,10 +1,7 @@
 
 import React, { Component } from "react";
 import { ContactFormSt } from "./contactForm.styled";
-
-// rcc->  == class component skeleton
-// rsc->  == stateless component skeleton
-// rsf->  == stateless named function skeleton
+import propTypes from 'prop-types';
 
 export default class ContactForm extends Component {
     state = {
@@ -12,14 +9,10 @@ export default class ContactForm extends Component {
         number: '',
       }
 
-    addContact = e => {
-        this.setState({name: e.currentTarget.value})
+    addContactNumber = e => {
+        this.setState({[e.currentTarget.name]: e.currentTarget.value})
       }
     
-    addNumber = e => {
-      this.setState({number: e.currentTarget.value})
-    }
-
     
   onButtonClick = e => {
     e.preventDefault()
@@ -44,7 +37,7 @@ export default class ContactForm extends Component {
                 pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
                 title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
                 required
-                onChange={this.addContact}
+                onChange={this.addContactNumber}
                 value={this.state.name}
               />
             </label>
@@ -56,7 +49,7 @@ export default class ContactForm extends Component {
                 pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
                 title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
                 required
-                onChange={this.addNumber}
+                onChange={this.addContactNumber}
                 value={this.state.number}
               />
             </label>
@@ -67,3 +60,6 @@ export default class ContactForm extends Component {
   }
 }
 
+ContactForm.propTypes = {
+  onSubmit: propTypes.func.isRequired,
+}

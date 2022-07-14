@@ -16,6 +16,6 @@ const FindContact = ({filter, onChange}) => {
 export default FindContact
 
 FindContact.propTypes ={
-  filter: propTypes.string,
-  onChange: propTypes.func,
+  filter: propTypes.string.isRequired,
+  onChange: propTypes.func.isRequired,
 }

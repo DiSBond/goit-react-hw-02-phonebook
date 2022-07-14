@@ -12,8 +12,8 @@ return (
 export default ContactListElement
 
 ContactListElement.propTypes = {
-    id: propTypes.string,
-    name: propTypes.string,
-    number: propTypes.string,
-    onDelete: propTypes.func,
+    id: propTypes.string.isRequired,
+    name: propTypes.string.isRequired,
+    number: propTypes.string.isRequired,
+    onDelete: propTypes.func.isRequired,
 }
