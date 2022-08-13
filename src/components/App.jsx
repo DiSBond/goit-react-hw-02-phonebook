@@ -73,7 +73,9 @@ export class App extends Component {
         <ContactForm onSubmit={this.addNewContact}/>
         <FindContact filter={this.state.filter} onChange={this.findContact}/>
         <Title>Contacts</Title>
-        <ContactList visibleContacts={visibleContacts} onDeleteContact={this.deleteContact}/>
+        <div>
+          {ContactList(visibleContacts, this.deleteContact)}
+        </div>
       </MainContainer>
     )
   }

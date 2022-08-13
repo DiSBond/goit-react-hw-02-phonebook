@@ -9,6 +9,10 @@ export default class ContactForm extends Component {
         number: '',
       }
 
+      static propTypes = {
+        onSubmit: propTypes.func.isRequired,
+      }
+
     addContactNumber = e => {
         this.setState({[e.currentTarget.name]: e.currentTarget.value})
       }
@@ -60,6 +64,3 @@ export default class ContactForm extends Component {
   }
 }
 
-ContactForm.propTypes = {
-  onSubmit: propTypes.func.isRequired,
-}
