@@ -1,24 +1,22 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const ContactFormSt = styled.form`
-        margin-bottom: 15px;
+  margin-bottom: 15px;
 
-    label {
-        display: block;
-        margin-bottom: 20px;
+  label {
+    display: block;
+    margin-bottom: 20px;
+  }
 
-    }
+  input {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+  }
 
-    input {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 10px;
-    }
-
-    button {
-        width: 150px;
-        height: 50px;   
-        
-    }
-`
+  button {
+    width: 150px;
+    height: 50px;
+  }
+`;

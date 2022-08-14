@@ -1,21 +1,21 @@
-
-import React from 'react'
-import { FcContatiner } from './findContact.styled'
+import React from 'react';
+import { FcContatiner } from './findContact.styled';
 import propTypes from 'prop-types';
 
-const FindContact = ({filter, onChange}) => {
-    return (
-        <FcContatiner>
-          <label>Find contacts by name
-              <input type="text" value={filter} onChange={onChange}/>
-          </label>
-        </FcContatiner>
-      )
-}
+const FindContact = ({ filter, onChange }) => {
+  return (
+    <FcContatiner>
+      <label>
+        Find contacts by name
+        <input type="text" value={filter} onChange={onChange} />
+      </label>
+    </FcContatiner>
+  );
+};
 
-export default FindContact
+export default FindContact;
 
-FindContact.propTypes ={
+FindContact.propTypes = {
   filter: propTypes.string.isRequired,
   onChange: propTypes.func.isRequired,
-}
+};
